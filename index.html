@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<!--Bypass block used for Keyboard accessible users to skip to main content-->
+			<a href="#main">Skip to Main content</a>
+			<!--Nav is major groups of links used for navigation, put all interactive elements inside the nav-->
+			<nav aria-label="main">
+				<ul>
+					<!--don't use button tag or javascript functions like onclick to mimic link, instead use anchor tags for accessible and comprehensible experience-->
+					<!--Bad semantic Elements: <li><button onclick ="navigate()">...</button></li>-->
+					<!--Bad semantic Elements: <li><div onclick ="navigate()">...</div></li>-->
+					<li><a href="#"></a>Home</li>
+					<!--aria-current should be used to display current page, you can also change href to #main when clicked on the active page to skip reload and go to relevant section on the page-->
+					<li><a href="#" aria-current="page"></a>Contact Us</li>
+					<li><a href="#"></a>Use meaningful Link text</li>
+				</ul>
+			</nav>
+		</header>
+		<!--Main is Main content of the page-->
+		<main id="main">
+			<!--h1 is usually title of the page. MAke sure to use only one h1 per page-->
+			<h1>Title</h1>
+			<!--ARIA-->
+			<!--Attributes which can be added to elements to add information to the accessibility tree-->
+			<!--Section defines Major section of the page-->
+			<section aria-label="Section Meaningful Heading">
+				<!--h2, h3...headings are Section/Sub section Heading-->
+				<h2>Section Meaningful Heading</h2>
+				<!--Don't skip levels: Don't use h6 unless h2,h3,h4,h5 headings are used first-->
+				<!--<h6></h6>-->
+			</section>
+			<!--aria-labelledby is used to give elements a name by referring to another element-->
+			<section aria-labelledby="meaningful-header-id">
+				<h2 id="meaningful-header-id">Section Meaningful Heading<h2>
+			</section>
+			<!-- Div are for sensible groupings other than semantic section elements wherever you can but div still can use landmark rules such as main, banner, article, region, complementary, form, navigation, contentinfo, search-->
+			<div></div>
+			<!--Article is for Repeated content which can be used on their own-->
+			<article></article>
+		</main>
+		<!--Aside is related to main content, but not necessary to understand it-->
+		<aside></aside>
+		<nav aria-label="footer"></nav>
+	</body>
+</html>
